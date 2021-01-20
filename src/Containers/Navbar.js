@@ -8,13 +8,13 @@ const Navbar = ({user}) => {
     return (
         <div className='navbar'>
             <div className='nav-right'>
-                <a className='navlink' href='/'>Home</a>
                 <a className='navlink' href='/about'>About</a>
                 <a className='navlink' href='/bikes'>Bikes</a>
                 {
                     !user ?
                     <>
                     <div className='dropdown'>
+                        <a className='navlink' href='/'>Home</a>
                         <button className='dropbtn'>Account</button>
                         <div className='dropdown-content'>
                             <a className='navlink' href='/login'>Log In</a>
@@ -24,12 +24,12 @@ const Navbar = ({user}) => {
                     </>
                     :
                     <>
-                    <a className='navlink' href='/likes'>Liked Places</a>
+                    <a className='navlink' href='/meets'>Meets</a>
                     <div className='dropdown'>
                         <button className='dropbtn'>{user.username}</button>
                         <div className='dropdown-content'>
                             <Link className='navlink' to='/new_meet'>Create Meet</Link>
-                            <Link className='navlink' to='/favorite'>Favorites</Link>
+                            <Link className='navlink' to='/likes'>Favorites</Link>
                             <Link className='navlink' to='/profile'>Profile</Link>
                             <Link className='navlink' to='/logout'>Log Out</Link>
                         </div>

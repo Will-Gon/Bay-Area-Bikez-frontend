@@ -10,8 +10,12 @@ import Home from './Containers/Home'
 import Navbar from './Containers/Navbar'
 import notFound from './Containers/notFound'
 import Bikes from './Containers/Bikes'
-
+import Meets from './Containers/Meets'
+import CreateMeet from './Containers/CreateMeet'
 import Profile from './Users/Profile'
+import FavoriteContainer from './Favorites/FavoriteContainer'
+
+//import Profile from './Users/Profile'
 
 class App extends React.Component {
   
@@ -21,23 +25,23 @@ class App extends React.Component {
     favorites: []
   }
 
-  // componentDidMount() {
-  //   let token = localStorage.getItem('token')
-  //   if (token) {
-  //     fetch('http://localhost:3000/profile', {
-  //       headers: {
-  //         'Authorization': `Bearer ${token}`,
-  //       }
-  //     })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         user: data.user, // Check Serializer attributes
-  //         favorites: data.likes // Check Serializer attributes
-  //       })
-  //     })
-  //   }
-  // }
+  componentDidMount() {
+    let token = localStorage.getItem('token')
+    if (token) {
+      fetch('http://localhost:3000/profile', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          user: data.user, // Check Serializer attributes
+          favorites: data.likes // Check Serializer attributes
+        })
+      })
+    }
+  }
 
   renderForm = (routerProps) => {
     if (routerProps.location.pathname === '/login') {
@@ -61,7 +65,7 @@ class App extends React.Component {
     fetch(request, {
       method: 'POST',
       headers: {
-        'Content-Type': 'appliction/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         username: info.username,
@@ -78,7 +82,7 @@ class App extends React.Component {
         this.props.history.push('/')
       })
     })
-    .catch(errors => console(errors))
+    .catch(errors => console.log(errors))
   }
 
   handleSignupFetch = (info, request) => {
@@ -179,7 +183,6 @@ class App extends React.Component {
     const { user, favorites } = this.state
     return(
       <div className='App'>
-        {/* <Login /> */}
         <Navbar user={user} />
         <div className='body'>
 
@@ -190,6 +193,11 @@ class App extends React.Component {
           <Route exact path='/signup' component={this.renderForm}/>
           <Route exact path='/logout' component={() => this.state.user ? this.handleLogout() : <Redirect to='/' />} />
           <Route exact path='/bikes' render={() => <Bikes />} />
+          <Route exact path='/meets' render={() => <Meets />} />
+          <Route exact path='/new_meet' render={() => <CreateMeet />} />
+          <Route exact path='/profile' render={() => <Profile user={user}/>} />
+          <Route exact path='/likes' render={() => <FavoriteContainer favorites={favorites} removeFavorite={this.removeFavorite}/>} />
+          <Route component={notFound} />
         </Switch> 
         </div>
       </div>
