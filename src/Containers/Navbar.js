@@ -8,6 +8,7 @@ const Navbar = ({user}) => {
     return (
         <div className='navbar'>
             <div className='nav-right'>
+                <a className='navlink' href='/'>Home</a>
                 <a className='navlink' href='/about'>About</a>
                 <a className='navlink' href='/bikes'>Bikes</a>
                 {

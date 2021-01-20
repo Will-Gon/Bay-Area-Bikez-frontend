@@ -31,7 +31,7 @@ class Signup extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className='field'>
                         <input 
-                        name='userName'
+                        name='username'
                         value={username}
                         onChange={this.handleChange}
                         type='text'
@@ -44,7 +44,7 @@ class Signup extends Component {
                         value={password}
                         onChange={this.handleChange}
                         type='password'
-                        placeHolder='Password'
+                        placeholder='Password'
                         />
                     </div>
                     <button className='submit-btn' type='submit'>Sign Up</button>

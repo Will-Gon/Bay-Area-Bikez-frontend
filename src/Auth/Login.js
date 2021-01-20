@@ -13,10 +13,10 @@ class Login extends Component {
         })
     }
 
-    handleSumit = (e) => {
+    handleSubmit = (e) => {
         //console.log('user')
         e.preventDefault() 
-        this.props.handleSumit(this.state)
+        this.props.handleSubmit(this.state)
     }
 
     handleErrors = () => {
@@ -35,7 +35,7 @@ class Login extends Component {
         const { username, password } = this.state
         return (
             <div className='login-form'>
-                <h1>Log In</h1>
+                <h1>Log in</h1>
                 <form onSubmit={this.handleSubmit}>
                     <input 
                     name='username' 

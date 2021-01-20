@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 
@@ -9,10 +9,11 @@ import About from './Containers/About'
 import Home from './Containers/Home'
 import Navbar from './Containers/Navbar'
 import notFound from './Containers/notFound'
+import Bikes from './Containers/Bikes'
 
 import Profile from './Users/Profile'
 
-class App extends Component {
+class App extends React.Component {
   
   state = {
     user: null,
@@ -20,9 +21,27 @@ class App extends Component {
     favorites: []
   }
 
+  componentDidMount() {
+    let token = localStorage.getItem('token')
+    if (token) {
+      fetch('http://localhost:3000/profile', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          user: data.user, // Check Serializer attributes
+          favorites: data.likes // Check Serializer attributes
+        })
+      })
+    }
+  }
+
   renderForm = (routerProps) => {
     if (routerProps.location.pathname === '/login') {
-      return <Login handleSumit={this.handleLogin} />
+      return <Login handleSubmit={this.handleLogin} />
     } else if (routerProps.location.pathname === '/signup'){
       return <Signup handleSubmit={this.handleSignup} />
     }
@@ -157,7 +176,9 @@ class App extends Component {
     const { user, favorites } = this.state
     return(
       <div className='App'>
+        {/* <Login /> */}
         <Navbar user={user} />
+        <div className='body'>
 
         <Switch>
           <Route exact path='/' render={() => <Home user={user} />} />
@@ -165,9 +186,9 @@ class App extends Component {
           <Route exact path='/login' component={this.renderForm}/>
           <Route exact path='/signup' component={this.renderForm}/>
           <Route exact path='/logout' component={() => this.state.user ? this.handleLogout() : <Redirect to='/' />} />
-
-
-        </Switch>
+          <Route exact path='/bikes' render={() => <Bikes />} />
+        </Switch> 
+        </div>
       </div>
     )
   }
