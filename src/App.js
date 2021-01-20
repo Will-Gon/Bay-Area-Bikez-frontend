@@ -21,23 +21,23 @@ class App extends React.Component {
     favorites: []
   }
 
-  componentDidMount() {
-    let token = localStorage.getItem('token')
-    if (token) {
-      fetch('http://localhost:3000/profile', {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        }
-      })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          user: data.user, // Check Serializer attributes
-          favorites: data.likes // Check Serializer attributes
-        })
-      })
-    }
-  }
+  // componentDidMount() {
+  //   let token = localStorage.getItem('token')
+  //   if (token) {
+  //     fetch('http://localhost:3000/profile', {
+  //       headers: {
+  //         'Authorization': `Bearer ${token}`,
+  //       }
+  //     })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         user: data.user, // Check Serializer attributes
+  //         favorites: data.likes // Check Serializer attributes
+  //       })
+  //     })
+  //   }
+  // }
 
   renderForm = (routerProps) => {
     if (routerProps.location.pathname === '/login') {
@@ -82,18 +82,21 @@ class App extends React.Component {
   }
 
   handleSignupFetch = (info, request) => {
+    // console.log(info)
     fetch(request, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application.json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         username: info.username,
-        password: info.password
+        password: info.password,
+        club_name: info.clubName
       })
     })
     .then(res => res.json())
     .then(data => {
+      console.log(data)
       localStorage.setItem('token', data.token)
       this.setState({
         user: data.user //Need to double check attributes
@@ -153,11 +156,11 @@ class App extends React.Component {
 
   updateProfile = (profile) => {
     const token = localStorage.getItem('token')
-    fetch(`http://locqalhost:3000/users/${this.state.user.id}`, {
+    fetch(`http://localhost:3000/users/${this.state.user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization' : `Bearer ${token}`
+        'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify({
         username: profile.username,

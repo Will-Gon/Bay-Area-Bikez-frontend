@@ -21,13 +21,13 @@ class SlideShow extends Component {
                             <img />
                         </div>
                         <div className='bike-slides'>
-                            <img />
+                            <img alt='Bike Club'/>
                         </div>
                         <div className='bike-slides'>
-                            <img />
+                            <img alt='Bike Club'/>
                         </div>
                         <div className='bike-slides'>
-                            <img />
+                            <img alt='Bike Club'/>
                         </div>
                     </Slide>
                 </div>

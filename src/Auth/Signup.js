@@ -4,7 +4,8 @@ class Signup extends Component {
     
     state = {
         username: '',
-        password: ''
+        password: '',
+        clubName: ''
     }
 
     handleChange = (e) => {
@@ -46,6 +47,14 @@ class Signup extends Component {
                         type='password'
                         placeholder='Password'
                         />
+                    </div>
+                    <div className='field'>
+                        <h4>Select your club!</h4>
+                        <select name='clubName' onChange={this.handleChange}>
+                            <option>NorthBay Bikez</option>
+                            <option>EastBay Bikez</option>
+                            <option>Redwood Bikez</option>
+                        </select>
                     </div>
                     <button className='submit-btn' type='submit'>Sign Up</button>
                 </form>
