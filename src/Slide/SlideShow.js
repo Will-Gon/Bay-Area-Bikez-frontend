@@ -18,16 +18,16 @@ class SlideShow extends Component {
                 <div>
                     <Slide scale={0.4} autoPlay={this.state.autoPlay} easing='ease'>
                         <div className='bike-slides'>
-                            <img alt='Bike Club'/>
+                            <img src='' alt='Bike Club'/>
                         </div>
                         <div className='bike-slides'>
-                            <img alt='Bike Club'/>
+                            <img src='' alt='Bike Club'/>
                         </div>
                         <div className='bike-slides'>
-                            <img alt='Bike Club'/>
+                            <img src='' alt='Bike Club'/>
                         </div>
                         <div className='bike-slides'>
-                            <img alt='Bike Club'/>
+                            <img src='' alt='Bike Club'/>
                         </div>
                     </Slide>
                 </div>

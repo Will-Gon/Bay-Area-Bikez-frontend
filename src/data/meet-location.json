@@ -1,0 +1,154 @@
+{
+    "type": "FeatureCollection",
+    "crs": {
+      "type": "name",
+      "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 960,
+          "NAME": "San Francisco, CA",
+          "DESCRIPTIO": "San Francisco, officially the City and County of San Francisco, is a cultural, commercial, and financial center of Northern California."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.774929, -122.419418]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 961,
+          "NAME": "Daly City, CA",
+          "DESCRIPTIO": "Daly City is the largest city in San Mateo County, California, United States, with an estimated 2019 population of 106,280. Located in the San Francisco Bay Area, and immediately south of San Francisco."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.691109, -122.472221]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 962,
+          "NAME": "Half Moon Bay, CA",
+          "DESCRIPTIO": "Half Moon Bay is a small city on the California coast, south of San Francisco. A string of beaches along the bay includes Half Moon Bay State Beach. The Coastside Trail leads north to Pillar Point, near the huge waves of the Mavericks surf spot."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.463640, -122.429240]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 963,
+          "NAME": "San Mateo, CA",
+          "DESCRIPTIO": "San Mateo is a city in San Mateo County, California, about 20 miles south of San Francisco, and 31 miles northwest of San Jose.It has a Mediterranean climate, and is known for its rich history."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.547150, -122.314400]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 964,
+          "NAME": "Oakland, CA",
+          "DESCRIPTIO": "Oakland is a city on the east side of San Francisco Bay, in California.Near Chinatown, the Oakland Museum of California covers state history, nature and art. Uptown contains the art deco Fox and Paramount theaters, restaurants, bars and galleries."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.804363, -122.271111]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 965,
+          "NAME": "San Leandro, CA",
+          "DESCRIPTIO": "San Leandro is a large suburban town in Alameda County, California, United States. It is located on the eastern shore of San Francisco Bay, between Oakland to the northwest and Hayward to the southeast."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.7258, -122.1569]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 966,
+          "NAME": "Tracy, CA",
+          "DESCRIPTIO": "Tracy is located inside a geographic triangle formed by Interstate 205 on the north side of the city, Interstate 5 to the east, and Interstate 580 to the southwest."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.7396, -121.4260]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 967,
+          "NAME": "Livermore, CA",
+          "DESCRIPTIO": "Livermore is a city in Alameda County, California, in the United States. With an estimated 2019 population of 90,189, Livermore is the most populous city in the Tri-Valley. Livermore is located on the eastern edge of California's San Francisco Bay Area. The current mayor is John Marchand."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.6819, -121.7685]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 968,
+          "NAME": "Berkeley, CA",
+          "DESCRIPTIO": "Berkeley is a city in Northern California on the east side of San Francisco Bay. It’s home to the University of California, Berkeley, birthplace of the 1960s Free Speech Movement."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.8715, -122.2730]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 969,
+          "NAME": "Dublin, CA",
+          "DESCRIPTIO": "Dublin is a suburban city of the East Bay in California. It is located within the Amador Valley of Alameda County's Tri-Valley region."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.7159, -121.9101]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 970,
+          "NAME": "Walnut Creek, CA",
+          "DESCRIPTIO": "Walnut Creek is a city in Contra Costa County, California, United States, located in the East Bay region of the San Francisco Bay Area, about 16 miles east of the city of Oakland."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.9101, -122.0652]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 971,
+          "NAME": "Richmond, CA",
+          "DESCRIPTIO": "Richmond is a city in western Contra Costa County, California, United States. The city was incorporated on August 7, 1905 and has a city council."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.9358, -122.3477]
+        }
+      }
+    ]
+}
+      

@@ -5,7 +5,7 @@ class Signup extends Component {
     state = {
         username: '',
         password: '',
-        clubName: ''
+        clubName: 'NorthBay Bikez'
     }
 
     handleChange = (e) => {

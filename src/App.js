@@ -11,7 +11,7 @@ import Navbar from './Containers/Navbar'
 import notFound from './Containers/notFound'
 import Bikes from './Containers/Bikes'
 import Meets from './Containers/Meets'
-import CreateMeet from './Containers/CreateMeet'
+import MeetPlaces from './Containers/MeetPlaces'
 import Profile from './Users/Profile'
 import FavoriteContainer from './Favorites/FavoriteContainer'
 
@@ -79,7 +79,7 @@ class App extends React.Component {
       this.setState({
         user: data.user //Need to confirm
       }, () => {
-        this.props.history.push('/')
+        this.props.history.push('/profile')
       })
     })
     .catch(errors => console.log(errors))
@@ -194,7 +194,7 @@ class App extends React.Component {
           <Route exact path='/logout' component={() => this.state.user ? this.handleLogout() : <Redirect to='/' />} />
           <Route exact path='/bikes' render={() => <Bikes />} />
           <Route exact path='/meets' render={() => <Meets />} />
-          <Route exact path='/new_meet' render={() => <CreateMeet />} />
+          <Route exact path='/places' render={() => <MeetPlaces />} />
           <Route exact path='/profile' render={() => <Profile user={user}/>} />
           <Route exact path='/likes' render={() => <FavoriteContainer favorites={favorites} removeFavorite={this.removeFavorite}/>} />
           <Route component={notFound} />
