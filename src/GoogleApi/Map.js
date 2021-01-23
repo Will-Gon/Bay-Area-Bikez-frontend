@@ -4,7 +4,8 @@ import * as meetsData from '../data/meet-location.json'
 import mapStyles from '../GoogleApi/mapStyles'
 
 
-function Map() {
+function Map({meets}) {
+    //console.log(meets)
     const [selectedPlace, setSelectedPlace] = useState(null)
     return (
         <GoogleMap 
@@ -12,7 +13,7 @@ function Map() {
         defaultCenter={{ lat: 37.570008, lng: -122.391980 }}
         defaultOptions={{styles: mapStyles}}
         >
-            {meetsData.features.map((place) => (
+            {/* {meetsData.features.map((place) => (
                 <Marker 
                 key={place.properties.PARK_ID} 
                 position={{ 
@@ -23,7 +24,8 @@ function Map() {
                     setSelectedPlace(place)
                 }}
                 />       
-            ))}
+            ))} */}
+            
 
             {selectedPlace && (
                 <InfoWindow

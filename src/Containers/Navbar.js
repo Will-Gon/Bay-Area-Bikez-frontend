@@ -3,7 +3,7 @@ import React from 'react'
 //just wrote this to out while I was thinking about it
 import { Link } from 'react-router-dom'
 
-const Navbar = ({user}) => {
+const Navbar = ({user, update}) => {
 
     return (
         <div className='navbar'>
@@ -33,6 +33,7 @@ const Navbar = ({user}) => {
                             <Link className='navlink' to='/places'>Meet Places</Link>
                             <Link className='navlink' to='/likes'>Favorites</Link>
                             <Link className='navlink' to='/profile'>Profile</Link>
+                            <Link className='navlink' to='/update'>Update Profile</Link>
                             <Link className='navlink' to='/logout'>Log Out</Link>
                         </div>
                     </div>

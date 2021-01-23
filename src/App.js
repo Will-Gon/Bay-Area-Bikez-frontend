@@ -14,15 +14,35 @@ import Meets from './Containers/Meets'
 import MeetPlaces from './Containers/MeetPlaces'
 import Profile from './Users/Profile'
 import FavoriteContainer from './Favorites/FavoriteContainer'
+import UpdateForm from './Containers/UdateForm'
+// import * as meetsData from './data/meet-location.json'
 
-//import Profile from './Users/Profile'
+
+import Sf from './MeetContainers/Sf'
+import DalyCity from './MeetContainers/DalyCity'
+import HMB from './MeetContainers/HMB'
+import SanMateo from './MeetContainers/SanMateo'
+import Oakland from './MeetContainers/Oakland'
+import SanLeandro from './MeetContainers/SanLeandro'
+import Tracy from './MeetContainers/Tracy'
+import Livermore from './MeetContainers/Livermore'
+import Berkeley from './MeetContainers/Berkeley'
+import Dublin from './MeetContainers/Dublin'
+import WalnutCreek from './MeetContainers/WalnutCreek'
+import Richmond from './MeetContainers/Richmond'
 
 class App extends React.Component {
   
   state = {
-    user: null,
+    user: {
+      username: '',
+      club: {
+        name: ''
+      }
+    },
     token: '',
-    favorites: []
+    favorites: [],
+    meets: []
   }
 
   componentDidMount() {
@@ -40,6 +60,11 @@ class App extends React.Component {
           favorites: data.likes // Check Serializer attributes
         })
       })
+      fetch('http://localhost:3000/places')
+      .then(res => res.json())
+      .then(data => this.setState({
+        meets: data
+      }))
     }
   }
 
@@ -103,7 +128,7 @@ class App extends React.Component {
       console.log(data)
       localStorage.setItem('token', data.token)
       this.setState({
-        user: data.user //Need to double check attributes
+        user: data.user 
       }, () => {
         this.props.history.push('/')
       })
@@ -173,14 +198,17 @@ class App extends React.Component {
     })
     .then(res => res.json())
     .then(profile => {
+      // console.log(profile.user)
       this.setState({
-        users: profile.data.attributes //NEED TO DOUBLE CHECK ATTRIBUTES
+        user: profile.user //NEED TO DOUBLE CHECK ATTRIBUTES
+      }, () => {
+         this.props.history.push('/profile')
       })
     })
   }
 
   render() {
-    const { user, favorites } = this.state
+    const { user, favorites, meets } = this.state
     return(
       <div className='App'>
         <Navbar user={user} />
@@ -193,10 +221,25 @@ class App extends React.Component {
           <Route exact path='/signup' component={this.renderForm}/>
           <Route exact path='/logout' component={() => this.state.user ? this.handleLogout() : <Redirect to='/' />} />
           <Route exact path='/bikes' render={() => <Bikes />} />
-          <Route exact path='/meets' render={() => <Meets />} />
+          <Route exact path='/meets' render={() => <Meets meets={meets} user={user}/>} />
           <Route exact path='/places' render={() => <MeetPlaces />} />
+          <Route exact path='/update' render={() => <UpdateForm handleSubmit={this.updateProfile}/>} />
           <Route exact path='/profile' render={() => <Profile user={user}/>} />
           <Route exact path='/likes' render={() => <FavoriteContainer favorites={favorites} removeFavorite={this.removeFavorite}/>} />
+
+          <Route exact path='/sf_meet' render={(props) => <Sf {...props} meets={meets.filter(meet => meet.name === 'San Francisco, Ca')}/>} />
+          <Route exact path='/daly_city_meet' render={(props) => <DalyCity {...props} meets={meets.filter(meet => meet.name === 'Daly City, Ca')}/>} />
+          <Route exact path='/hmb_meet' render={(props) => <HMB {...props} meets={meets.filter(meet => meet.name === 'Half Moon Bay, Ca')}/>} />
+          <Route exact path='/san_mateo_meet' render={(props) => <SanMateo {...props} meets={meets.filter(meet => meet.name === 'San Mateo, Ca')}/>} />
+          <Route exact path='/oakland_meet' render={(props) => <Oakland {...props} meets={meets.filter(meet => meet.name === 'Oakland, Ca')}/>} />
+          <Route exact path='/san_leandro_meet' render={(props) => <SanLeandro {...props} meets={meets.filter(meet => meet.name === 'San Leandro, Ca')}/>} />
+          <Route exact path='/tracy_meet' render={(props) => <Tracy {...props} meets={meets.filter(meet => meet.name === 'Tracy, Ca')}/>} />
+          <Route exact path='/livermore_meet' render={(props) => <Livermore {...props} meets={meets.filter(meet => meet.name === 'Livermore, Ca')}/>} />
+          <Route exact path='/berkeley_meet' render={(props) => <Berkeley {...props} meets={meets.filter(meet => meet.name === 'Berkeley, Ca')}/>} />
+          <Route exact path='/dublin_meet' render={(props) => <Dublin {...props} meets={meets.filter(meet => meet.name === 'Dublin, Ca')}/>} />
+          <Route exact path='/walnut_creek_meet' render={(props) => <WalnutCreek {...props} meets={meets.filter(meet => meet.name === 'Walnut Creek, Ca')}/>} />
+          <Route exact path='/richmond_meet' render={(props) => <Richmond {...props} meets={meets.filter(meet => meet.name === 'Richmond, Ca')}/>} />
+
           <Route component={notFound} />
         </Switch> 
         </div>
@@ -205,26 +248,5 @@ class App extends React.Component {
   }
   
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default withRouter(App)

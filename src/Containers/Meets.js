@@ -1,17 +1,17 @@
 import React from 'react'
+// import { Link } from 'react-router-dom'
 import Map from '../GoogleApi/Map'
-import * as meetsData from '../data/meet-location.json'
+import MeetPlaces from './MeetPlaces'
 
-const Meets = ({user}) => {
+const Meets = ({user, meets}) => {
+    //console.log(meets)
     return (
         <div>
             <h1>Meets Page</h1>
-            <Map />
+            {/* <Map meets={meets}/> */}
             <div>
                 <ul>
-                    {meetsData.features.map(place => {
-                        return <li>{place.properties.NAME}</li>
-                    })}
+                    <MeetPlaces user={user}/>
                 </ul>
             </div>
         </div> 

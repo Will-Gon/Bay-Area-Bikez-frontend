@@ -75,6 +75,43 @@
   margin-top: 150px;
 }
 
+/* Meets Grids*/
+
+.meets-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 0.5fr);
+}
+
+.meets-grid {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.text-over-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  width: 100px;
+  height: 25px;
+  font-size: 25px;
+}
+
+.meets-grid img {
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.meets-grid:hover img {
+  opacity: 0.3;
+}
+
+
 
 .App {
   text-align: center;
