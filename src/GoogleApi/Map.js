@@ -64,7 +64,7 @@ export default function App({meets}) {
         <div style={{ width: "100vw", height: "100vh" }}>
             <WrappedMap 
             meets={meets}
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD3cx--g8lhZjbd2l-NhfKSi7q1v-hltR0`}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=`}
             loadingElement={<div style={{ height: "100%" }} />}
             containerElement={<div style={{ height: "100%" }} />}
             mapElement={<div style={{ height: "100%" }} />}
