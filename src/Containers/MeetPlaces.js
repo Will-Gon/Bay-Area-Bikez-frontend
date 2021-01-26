@@ -16,7 +16,7 @@ const MeetPlaces = ({user}) => {
     //console.log(user)
     return (
         <div>
-            <h1>Meets 🏍 </h1> 
+            <h1> 🏍 Meets 🏍 </h1> 
             <div className='meets-wrapper'>
                 <div className='meets-grid'>
                     <a className='navlink' href='sf_meet'>
@@ -97,7 +97,7 @@ const MeetPlaces = ({user}) => {
                 <br />
                 <div className='meets-grid'>
                     <a className='navlink' href='richmond_meet'>
-                        <img src={Richmond} alt='Richmonf' />
+                        <img src={Richmond} alt='Richmond' />
                         <div className='text-over-image'>Richmond Meet</div>
                     </a>
                 </div>

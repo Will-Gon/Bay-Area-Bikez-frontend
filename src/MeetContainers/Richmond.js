@@ -9,20 +9,22 @@ const Richmond = () => {
     return (
         <div>
             <h1>Richmond Bike Meet</h1>
-            <div>
-                <img src={Richmond1} alt='Bike Img'/>
-            </div>
-            <div>
-                <img src={Richmond2} alt='Bike Img'/>
-            </div>
-            <div>
-                <img src={Richmond3} alt='Bike Img'/>
-            </div>
-            <div>
-                <img src={Richmond4} alt='Bike Img'/>
-            </div>
-            <div>
-                <img src={Richmond5} alt='Bike Img'/>
+            <div className='place-meets-wrapper'>
+                <div className='bay-area-meets'>
+                    <img src={Richmond1} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Richmond2} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Richmond3} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Richmond4} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Richmond5} alt='Bike Img'/>
+                </div>
             </div>
         </div>
         

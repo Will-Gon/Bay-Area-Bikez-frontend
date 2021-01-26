@@ -20,7 +20,7 @@
 }
 
 .navbar .navlink:hover {
-  background: red;
+  background: rgb(156, 6, 6);
   color: white;
   cursor: pointer;
 }
@@ -76,10 +76,20 @@
 }
 
 /* Meets Grids*/
+.place-meets-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 0.5fr);
+}
+
+.bay-area-meets {
+  position: relative;
+  text-align: center;
+  color: white;
+}
 
 .meets-wrapper {
   display: grid;
-  grid-template-columns: repeat(12, 0.5fr);
+  grid-template-columns: repeat(8, 0.5fr);
 }
 
 .meets-grid {
@@ -94,10 +104,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   width: 100px;
-  height: 25px;
+  height: 50px;
   font-size: 25px;
 }
 

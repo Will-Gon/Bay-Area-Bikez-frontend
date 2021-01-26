@@ -11,7 +11,7 @@ import Navbar from './Containers/Navbar'
 import notFound from './Containers/notFound'
 import Bikes from './Containers/Bikes'
 import Meets from './Containers/Meets'
-import MeetPlaces from './Containers/MeetPlaces'
+import MeetCities from './Containers/MeetCities'
 import Profile from './Users/Profile'
 import FavoriteContainer from './Favorites/FavoriteContainer'
 import UpdateForm from './Containers/UdateForm'
@@ -174,7 +174,7 @@ class App extends React.Component {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      //console.log(data)
       this.setState(prevState => {
         return {
           favorites: prevState.favorites.filter(favorite => favorite.id !== data.place.id)//Need to double check attributes
@@ -222,10 +222,10 @@ class App extends React.Component {
           <Route exact path='/logout' component={() => this.state.user ? this.handleLogout() : <Redirect to='/' />} />
           <Route exact path='/bikes' render={() => <Bikes />} />
           <Route exact path='/meets' render={() => <Meets meets={meets} user={user}/>} />
-          <Route exact path='/places' render={() => <MeetPlaces />} />
+          <Route exact path='/places_to_like' render={() => <MeetCities user={user} meets={meets}/>} />
           <Route exact path='/update' render={() => <UpdateForm handleSubmit={this.updateProfile}/>} />
-          <Route exact path='/profile' render={() => <Profile user={user}/>} />
-          <Route exact path='/likes' render={() => <FavoriteContainer favorites={favorites} removeFavorite={this.removeFavorite}/>} />
+          <Route exact path='/profile' render={() => <Profile user={user} meets={meets}/>} />
+          <Route exact path='/likes' render={() => <FavoriteContainer meets={meets} user={user} favorites={favorites} removeFavorite={this.removeFavorite}/>} />
 
           <Route exact path='/sf_meet' render={(props) => <Sf {...props} meets={meets.filter(meet => meet.name === 'San Francisco, Ca')}/>} />
           <Route exact path='/daly_city_meet' render={(props) => <DalyCity {...props} meets={meets.filter(meet => meet.name === 'Daly City, Ca')}/>} />

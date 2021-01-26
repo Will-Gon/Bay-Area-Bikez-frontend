@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Slide } from 'react-slideshow-image'
-import Harley1 from '../SlideShowImages/Harley1.jpg'
-import Harley2 from '../SlideShowImages/Harley2.jpg'
-import Harley3 from '../SlideShowImages/Harley3.jpg'
-import Harley4 from '../SlideShowImages/Harley4.jpg'
+import 'react-slideshow-image/dist/styles.css'
+import Redwood2 from '../SlideShowImages/Redwood2.jpeg'
+import Eastside2 from '../SlideShowImages/Eastside2.png'
+import NorthBay2 from '../SlideShowImages/NorthBay2.jpeg'
 
 class SlideShow extends Component {
      
@@ -22,16 +22,13 @@ class SlideShow extends Component {
                 <div>
                     <Slide scale={0.4} autoPlay={this.state.autoPlay} easing='ease'>
                         <div className='bike-slides'>
-                            <img src={Harley1} alt='Bike Club' />
+                            <img src={Redwood2} alt='Bike Club' />
                         </div>
                         <div className='bike-slides'>
-                            <img src={Harley2} alt='Bike Club'/>
+                            <img src={Eastside2} alt='Bike Club'/>
                         </div>
                         <div className='bike-slides'>
-                            <img src={Harley3} alt='Bike Club'/>
-                        </div>
-                        <div className='bike-slides'>
-                            <img src={Harley4} alt='Bike Club'/>
+                            <img src={NorthBay2} alt='Bike Club'/>
                         </div>
                     </Slide>
                 </div>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import MeetPlaces from '../Containers/MeetPlaces'
 import * as meetsData from '../data/meet-location.json'
 import mapStyles from '../GoogleApi/mapStyles'
 
 
-function Map({meets}) {
+const Map = ({meets}) => {
     //console.log(meets)
     const [selectedPlace, setSelectedPlace] = useState(null)
     return (
@@ -25,7 +26,16 @@ function Map({meets}) {
                 }}
                 />       
             ))} */}
-            
+           
+           {meets.map((p) => (
+               //console.log(p.lng)
+               <Marker 
+               key={p.id}
+               position={{
+                   lat: p.lat,
+                   lng: p.lng
+               }}/>
+           ))}
 
             {selectedPlace && (
                 <InfoWindow
@@ -49,11 +59,12 @@ function Map({meets}) {
 
 const WrappedMap = withScriptjs(withGoogleMap(Map))
 
-export default function App() {
+export default function App({meets}) {
     return(
         <div style={{ width: "100vw", height: "100vh" }}>
             <WrappedMap 
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=`}
+            meets={meets}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD3cx--g8lhZjbd2l-NhfKSi7q1v-hltR0`}
             loadingElement={<div style={{ height: "100%" }} />}
             containerElement={<div style={{ height: "100%" }} />}
             mapElement={<div style={{ height: "100%" }} />}
@@ -62,4 +73,5 @@ export default function App() {
         
     )
 } 
+
 

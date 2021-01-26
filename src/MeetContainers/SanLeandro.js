@@ -4,25 +4,47 @@ import SanLeandro2 from '../MeetImages/SanLeandro/SanLeandro2.jpeg'
 import SanLeandro3 from '../MeetImages/SanLeandro/SanLeandro3.jpeg'
 import SanLeandro4 from '../MeetImages/SanLeandro/SanLeandro4.jpeg'
 import SanLeandro5 from '../MeetImages/SanLeandro/SanLeandro5.jpeg'
+import Tracy1 from '../MeetImages/Tracy/Tracy1.jpeg'
+import Tracy2 from '../MeetImages/Tracy/Tracy2.jpeg'
+import Tracy3 from '../MeetImages/Tracy/Tracy3.jpeg'
+import Tracy4 from '../MeetImages/Tracy/Tracy4.jpeg'
+import Tracy5 from '../MeetImages/Tracy/Tracy5.jpeg'
 
 const SanLeandro = () => {
     return (
         <div>
             <h1>San Leandro Bike Meet</h1>
-            <div>
-                <img src={SanLeandro1} alt='Bike Img'/>
-            </div>
-            <div>
-                <img src={SanLeandro2} alt='Bike Img'/>
-            </div>
-            <div>
-                <img src={SanLeandro3} alt='Bike Img'/>
-            </div>
-            <div>
-                <img src={SanLeandro4} alt='Bike Img'/>
-            </div>
-            <div>
-                <img src={SanLeandro5} alt='Bike Img'/>
+            <div className='place-meets-wrapper'>
+                <div className='bay-area-meets'>
+                    <img src={SanLeandro1} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={SanLeandro2} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={SanLeandro3} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={SanLeandro4} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={SanLeandro5} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Tracy1} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Tracy2} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Tracy3} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Tracy4} alt='Bike Img'/>
+                </div>
+                <div className='bay-area-meets'>
+                    <img src={Tracy5} alt='Bike Img'/>
+                </div>
             </div>
         </div>
         

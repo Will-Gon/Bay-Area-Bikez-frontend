@@ -8,7 +8,7 @@ const Meets = ({user, meets}) => {
     return (
         <div>
             <h1>Meets Page</h1>
-            {/* <Map meets={meets}/> */}
+            <Map meets={meets}/>
             <div>
                 <ul>
                     <MeetPlaces user={user}/>
