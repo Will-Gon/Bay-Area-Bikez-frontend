@@ -7,7 +7,7 @@ import Richmond5 from '../MeetImages/Richmond/Richmond5.jpeg'
 
 const Richmond = () => {
     return (
-        <div>
+        <div className='place-pics'>
             <h1>Richmond Bike Meet</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

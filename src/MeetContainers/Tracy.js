@@ -12,7 +12,7 @@ import SanLeandro5 from '../MeetImages/SanLeandro/SanLeandro5.jpeg'
 
 const Tracy = () => {
     return (
-        <div>
+        <div className='place-pics'>
             <h1>Tracy Bike Meet</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

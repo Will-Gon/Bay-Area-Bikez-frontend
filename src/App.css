@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  background: white;
+  background: rgb(241, 235, 235);
   display: block;
   z-index: 9999;
   width: 100%;
@@ -75,26 +75,155 @@
   margin-top: 150px;
 }
 
-/* Meets Grids*/
+/*Map*/
+
+.map-container {
+  display: inline-block;
+  border: inset;
+  padding: 10px;
+  background-color: black;
+}
+
+/* Containers*/
+
+.about-page {
+  background-color: lightgray;
+}
+
+.bikes-page {
+  background-color: lightgray;
+}
+
+.meets-page {
+  background-color: lightgray;
+}
+
+.city-page {
+  background-color: lightgray;
+  /* border: inset; */
+}
+
+.slide {
+  border: inset;
+  margin: 25px;
+  background-color: lightgray;
+}
+
+.fade {
+  border: inset;
+  margin: 25px;
+  background-color: lightgray;
+}
+
+.home-page {
+  background-color: lightgray;
+  margin: 25px;
+}
+
+/* Meetup Pics*/
+.slide-wrapper {
+  border: inset;
+  background-color: rgb(0, 80, 103);
+}
+
 .place-meets-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 0.5fr);
+  margin: 25px;
+  padding: 25px;
+  border: inset;
+  background-color: rgb(0, 80, 103);
+}
+
+.liked-city {
+  margin: 25px;
+  position: relative;
+  text-align: center;
+  border: inset;
+  background-color: rgb(223, 230, 232);
+}
+
+.liked-city img {
+  max-width: 30%;
+}
+
+.liked-wrapper {
+  border: inset;
+  margin: 25px;
+  background-color: rgb(0, 80, 103);
+}
+
+.likes-wrapper {
+  margin: 25px;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(5, 0.5fr);
+  background-color: rgb(0, 80, 103);
+  border: inset;
+}
+
+.like-pics {
+  margin: 25px;
+  position: relative;
+  text-align: center;
+  border: inset;
+  background-color: rgb(223, 230, 232);
+}
+
+.like-pics img {
+  max-width: 100%;
+  position: relative;
 }
 
 .bay-area-meets {
+  margin: 25px;
   position: relative;
   text-align: center;
+  border: inset;
+  background-color: rgb(223, 230, 232);
+
+}
+/* Meet Grids*/
+
+.about-grid {
+  border: inset;
+  margin: 25px;
+  background-color: lightgray;
+}
+
+.about-wrapper {
+  border: inset;
+  margin: 25px;
+  background-color: rgb(0, 80, 103);
+}
+
+.place-container {
+  margin: 10px;
+  padding: 0px;
+  border: inset;
+  background-color: rgb(0, 80, 103);
 }
 
 .meets-wrapper {
+  margin: 0px;
+  padding: 0px;
   display: grid;
   grid-template-columns: repeat(8, 0.5fr);
+  background-color: rgb(0, 80, 103);
+  /* background-color: black; */
 }
 
 .meets-grid {
+  display: block;
+  margin: 25px;
   position: relative;
   text-align: center;
   color: white;
+  /* border: 1px solid black;
+  border-radius: 10px; */
+  border: inset;
+  background-color: lightgray;
+  
 }
 
 .text-over-image {

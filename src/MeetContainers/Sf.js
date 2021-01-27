@@ -14,7 +14,7 @@ const Sf = (props) => {
     console.log(props.location.pathname.split('/')[1])
     console.log(props.meets)
     return (
-        <div>
+        <div className='place-pics'>
             <h1>San Francisco Bike Meet</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

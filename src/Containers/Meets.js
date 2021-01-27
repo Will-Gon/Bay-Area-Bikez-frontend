@@ -6,10 +6,10 @@ import MeetPlaces from './MeetPlaces'
 const Meets = ({user, meets}) => {
     //console.log(meets)
     return (
-        <div>
+        <div className='meets-page'>
             <h1>Meets Page</h1>
             <Map meets={meets}/>
-            <div>
+            <div className='place-container'>
                 <ul>
                     <MeetPlaces user={user}/>
                 </ul>

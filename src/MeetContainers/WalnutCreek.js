@@ -12,7 +12,7 @@ import Daly5 from '../MeetImages/DalyCity/Daly5.jpeg'
 
 const WalnutCreek = () => {
     return (
-        <div>
+        <div className='place-pics'>
             <h1>Walnut Creek Bike Meet</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

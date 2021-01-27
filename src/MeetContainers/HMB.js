@@ -12,7 +12,7 @@ import Dublin5 from '../MeetImages/Dublin/Dublin5.jpeg'
 
 const HMB = () => {
     return (
-        <div>
+        <div className='place-pics'>
             <h1>HMB Bike Meet</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

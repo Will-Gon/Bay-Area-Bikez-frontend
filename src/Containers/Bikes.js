@@ -13,7 +13,7 @@ import Gsxr10 from '../MotorcycleImages/Gsxr10.jpeg'
 
 const Bikes = () => {
     return (
-        <div>
+        <div className='bikes-page'>
             <h1>Bikes Page</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

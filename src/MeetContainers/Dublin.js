@@ -12,7 +12,7 @@ import HMB5 from '../MeetImages/HalfMoonBay/HMB5.jpeg'
 
 const Dublin = () => {
     return (
-        <div>
+        <div className='place-pics'>
             <h1>Dublin Bike Meet</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

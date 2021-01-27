@@ -3,12 +3,12 @@ import React from 'react'
 const MeetCities = ({user, meets, addToFavorites, removeFavorite, favorites}) => {
     console.log(meets)
     return (
-        <div>
+        <div className='city-page'>
             <h1>Meet Cities!!!!</h1>
-            <div className='meets-wrapper'>
+            <div className='likes-wrapper'>
             {meets.map((place) => (
-                <div className='bay-area-meets'>
-                    key={place.id}
+                <div className='like-pics'>
+                    {/* key={place.id} */}
                     <img src={place.image_url} alt={place.name}/>
                     {favorites.find(favorite => favorite.place.id === place.id) ? 
                     <button onClick={() => removeFavorite(place)}>Unlike</button>

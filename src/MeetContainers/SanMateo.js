@@ -12,7 +12,7 @@ import Berkeley5 from '../MeetImages/Berkeley/Berkeley5.jpeg'
 
 const SanMateo = () => {
     return (
-        <div>
+        <div className='place-pics'>
             <h1>San Mateo Bike Meet</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

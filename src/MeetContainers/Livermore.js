@@ -12,7 +12,7 @@ import Oakland5 from '../MeetImages/Oakland/Oakland5.jpeg'
 
 const Livermore = () => {
     return (
-        <div>
+        <div className='place-pics'>
             <h1>Livermore Bike Meet</h1>
             <div className='place-meets-wrapper'>
                 <div className='bay-area-meets'>

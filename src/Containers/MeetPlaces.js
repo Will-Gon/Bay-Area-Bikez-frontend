@@ -15,7 +15,7 @@ import Richmond from '../PlaceImages/Richmond.jpeg'
 const MeetPlaces = ({user}) => {
     //console.log(user)
     return (
-        <div>
+        <div className='place-container'>
             <h1> 🏍 Meets 🏍 </h1> 
             <div className='meets-wrapper'>
                 <div className='meets-grid'>
