@@ -1,10 +1,14 @@
 import React from 'react'
+import Redwood2 from '../SlideShowImages/Redwood2.jpeg'
 
 const Profile = ({ user, meets }) => {
     //console.log(meets)
     return (
         <div>
             <h1>{user.username}'s Page</h1>
+            <div className='build-center'>
+                <img src={Redwood2} alt='Club'/>
+            </div>     
             <div className='build-aside'>
                 <h2>Club Name:</h2>
                 <h1>{user.club.name}</h1>
@@ -15,7 +19,7 @@ const Profile = ({ user, meets }) => {
             </div> 
             <div className='build-aside'>
             <a className='li-link' href='/shops_map'>Near by Shops</a>
-            </div>     
+            </div>
         </div>
     )
 }

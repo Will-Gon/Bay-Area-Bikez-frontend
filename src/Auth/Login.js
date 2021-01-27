@@ -37,26 +37,26 @@ class Login extends Component {
             <div className='login-form'>
                 <h1>Log in</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <input 
-                    name='username' 
-                    value={username}
-                    type='text' 
-                    placeholder='Username'
-                    onChange={this.handleChange}
-                    />
-                    <br/>
-                    <input 
-                    name='password'
-                    value={password}
-                    type='password'
-                    placeholder='Password'
-                    onChange={this.handleChange}
-                    />
-                    <br/>
-                    <button className='submit-btn' type='submit'>Log in</button>
-                    <div>
-                        Or <a className='to-link' href='/signup'>Sign Up</a>
-                    </div>
+                     <input 
+                        name='username' 
+                        value={username}
+                        type='text' 
+                        placeholder='Username'
+                        onChange={this.handleChange}
+                        />
+                        <br/>
+                        <input 
+                        name='password'
+                        value={password}
+                        type='password'
+                        placeholder='Password'
+                        onChange={this.handleChange}
+                        />
+                        <br/>
+                        <button className='submit-btn' type='submit'>Log in</button>
+                        <div>
+                            Or <a className='to-link' href='/signup'>Sign Up</a>
+                        </div> 
                 </form>
                 <div>
                     {this.state.errors ? this.handleErrors() : null}
@@ -67,3 +67,24 @@ class Login extends Component {
 }
 
 export default Login
+
+// {/* <input 
+//                     name='username' 
+//                     value={username}
+//                     type='text' 
+//                     placeholder='Username'
+//                     onChange={this.handleChange}
+//                     />
+//                     <br/>
+//                     <input 
+//                     name='password'
+//                     value={password}
+//                     type='password'
+//                     placeholder='Password'
+//                     onChange={this.handleChange}
+//                     />
+//                     <br/>
+//                     <button className='submit-btn' type='submit'>Log in</button>
+//                     <div>
+//                         Or <a className='to-link' href='/signup'>Sign Up</a>
+//                     </div> */}

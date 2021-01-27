@@ -9,7 +9,6 @@ import SanMateo2 from '../MeetImages/SanMateo/SanMateo2.jpeg'
 import SanMateo3 from '../MeetImages/SanMateo/SanMateo3.jpeg'
 import SanMateo4 from '../MeetImages/SanMateo/SanMateo4.jpeg'
 import SanMateo5 from '../MeetImages/SanMateo/SanMateo5.jpeg'
-import SanMateo from './SanMateo'
 
 const Berkeley = () => {
     return (

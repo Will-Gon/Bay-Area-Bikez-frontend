@@ -13,8 +13,8 @@ import Bikes from './Containers/Bikes'
 import Meets from './Containers/Meets'
 import MeetCities from './Containers/MeetCities'
 import Profile from './Users/Profile'
-import FavoriteContainer from './Favorites/FavoriteContainer'
-import UpdateForm from './Containers/UdateForm'
+import FavoritesContainer from './Containers/FavoritesContainer'
+import UpdateForm from './Containers/UpdateForm'
 // import * as meetsData from './data/meet-location.json'
 
 
@@ -57,15 +57,15 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           user: data.user, // Check Serializer attributes
-          favorites: data.likes // Check Serializer attributes
+          favorites: data.user.likes // Check Serializer attributes
         })
       })
-      fetch('http://localhost:3000/places')
-      .then(res => res.json())
-      .then(data => this.setState({
-        meets: data
-      }))
     }
+    fetch('http://localhost:3000/places')
+    .then(res => res.json())
+    .then(data => this.setState({
+      meets: data
+    }))
   }
 
   renderForm = (routerProps) => {
@@ -99,13 +99,17 @@ class App extends React.Component {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
-      localStorage.setItem('token', data.token)
-      this.setState({
-        user: data.user //Need to confirm
-      }, () => {
-        this.props.history.push('/profile')
-      })
+      //console.log(data)
+      if (data.user) {
+        localStorage.setItem('token', data.token)
+        this.setState({
+          user: data.user //Need to confirm
+        }, () => {
+          this.props.history.push('/profile')
+        })
+      } else {
+        //console.log(data)
+      }
     })
     .catch(errors => console.log(errors))
   }
@@ -139,34 +143,42 @@ class App extends React.Component {
   handleLogout = () => {
     localStorage.removeItem('token')
     this.setState({
-      user: null
+      user: {
+        username: '',
+        club: {
+          name: ''
+        }
+      } 
     })
     return <Redirect to='/' push={true} />
   }
 
-  addToFavorites = (place) => {
+  addToFavorites = (user, place) => {
+    console.log(place)
     const token = localStorage.getItem('token')
-    fetch('http://localhost:3000/favorites', {
-      methos: 'POST',
+    fetch('http://localhost:3000/likes', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization' : `Bearer${token}`
       }, 
-      body: JSON.stringify({place_id: place.id, user_id: this.state.user.id})
+      body: JSON.stringify({place_id: place.id, user_id: user.id})
     })
     .then(res => res.json())
     .then(data => {
+      //console.log(data)
       this.setState(prevState => {
         return {
-          favorites: [...prevState.favorites, data.place] //Need to double check attributes
+          favorites: [...prevState.favorites, data] //Need to double check attributes
         }
       })
     })
   }
 
   removeFavorite = (place) => {
-    const fav = this.state.favorites.find(favorite => favorite.id === place.id)
-    fetch(`http://localhost:3000/favorites/${fav.fav.id}`, {
+    const fav = this.state.favorites.find(favorite => favorite.place.id === place.id)
+    console.log(place)
+    fetch(`http://localhost:3000/likes/${fav.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -174,10 +186,10 @@ class App extends React.Component {
     })
     .then(res => res.json())
     .then(data => {
-      //console.log(data)
+      console.log(data)
       this.setState(prevState => {
         return {
-          favorites: prevState.favorites.filter(favorite => favorite.id !== data.place.id)//Need to double check attributes
+          favorites: prevState.favorites.filter(favorite => favorite.place.id !== place.id)//Need to double check attributes
         }
       })
     })
@@ -222,10 +234,10 @@ class App extends React.Component {
           <Route exact path='/logout' component={() => this.state.user ? this.handleLogout() : <Redirect to='/' />} />
           <Route exact path='/bikes' render={() => <Bikes />} />
           <Route exact path='/meets' render={() => <Meets meets={meets} user={user}/>} />
-          <Route exact path='/places_to_like' render={() => <MeetCities user={user} meets={meets}/>} />
+          <Route exact path='/places_to_like' render={() => <MeetCities user={user} meets={meets} addToFavorites={this.addToFavorites} removeFavorite={this.removeFavorite} favorites={favorites}/>} />
           <Route exact path='/update' render={() => <UpdateForm handleSubmit={this.updateProfile}/>} />
           <Route exact path='/profile' render={() => <Profile user={user} meets={meets}/>} />
-          <Route exact path='/likes' render={() => <FavoriteContainer meets={meets} user={user} favorites={favorites} removeFavorite={this.removeFavorite}/>} />
+          <Route exact path='/likes' render={() => <FavoritesContainer user={user} favorites={favorites} />} />
 
           <Route exact path='/sf_meet' render={(props) => <Sf {...props} meets={meets.filter(meet => meet.name === 'San Francisco, Ca')}/>} />
           <Route exact path='/daly_city_meet' render={(props) => <DalyCity {...props} meets={meets.filter(meet => meet.name === 'Daly City, Ca')}/>} />

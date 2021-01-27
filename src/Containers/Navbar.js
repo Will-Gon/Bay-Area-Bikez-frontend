@@ -9,7 +9,7 @@ const Navbar = ({user}) => {
                 <a className='navlink' href='/'>Home</a>
                 <a className='navlink' href='/about'>About</a>
                 <a className='navlink' href='/bikes'>Bikes</a>
-                {!user ?
+                {user.username === '' ?
                     <>
                         <div className='nav-right'>
                             <div className='dropdown'>

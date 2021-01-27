@@ -9,7 +9,6 @@ import Livermore2 from '../MeetImages/Livermore/Livermore2.jpeg'
 import Livermore3 from '../MeetImages/Livermore/Livermore3.jpeg'
 import Livermore4 from '../MeetImages/Livermore/Livermore4.jpeg'
 import Livermore5 from '../MeetImages/Livermore/Livermore5.jpeg'
-import Livermore from './Livermore'
 
 const Oakland = () => {
     return (

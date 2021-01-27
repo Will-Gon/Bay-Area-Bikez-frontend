@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
-import MeetPlaces from '../Containers/MeetPlaces'
-import * as meetsData from '../data/meet-location.json'
 import mapStyles from '../GoogleApi/mapStyles'
 
 
@@ -28,28 +26,32 @@ const Map = ({meets}) => {
             ))} */}
            
            {meets.map((p) => (
-               //console.log(p.lng)
+               //console.log(p.lat)
                <Marker 
                key={p.id}
                position={{
                    lat: p.lat,
                    lng: p.lng
+               }}
+               onClick={() => {
+                   setSelectedPlace(p)
                }}/>
            ))}
 
             {selectedPlace && (
+                //console.log(selectedPlace.lat)
                 <InfoWindow
                 position={{ 
-                    lat: selectedPlace.geometry.coordinates[0], 
-                    lng: selectedPlace.geometry.coordinates[1]
+                    lat: selectedPlace.lat, 
+                    lng: selectedPlace.lng
                 }}
                 onCloseClick={() => {
                     setSelectedPlace(null)
                 }}
                 >
                     <div>
-                        <h2>{selectedPlace.properties.NAME}</h2>
-                        <p>{selectedPlace.properties.DESCRIPTIO}</p>
+                        <h2>{selectedPlace.name}</h2>
+                        <p>{selectedPlace.description}</p>
                     </div>
                 </InfoWindow>
             )}

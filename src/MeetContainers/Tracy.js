@@ -9,7 +9,6 @@ import SanLeandro2 from '../MeetImages/SanLeandro/SanLeandro2.jpeg'
 import SanLeandro3 from '../MeetImages/SanLeandro/SanLeandro3.jpeg'
 import SanLeandro4 from '../MeetImages/SanLeandro/SanLeandro4.jpeg'
 import SanLeandro5 from '../MeetImages/SanLeandro/SanLeandro5.jpeg'
-import SanLeandro from './SanLeandro'
 
 const Tracy = () => {
     return (

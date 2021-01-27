@@ -121,6 +121,15 @@
   opacity: 0.3;
 }
 
+.build-aside {
+  text-align: left;
+  padding: 15px;
+}
+
+/* .build-center {
+  margin-top: 0px;
+} */
+
 
 
 .App {

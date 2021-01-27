@@ -9,7 +9,6 @@ import Richmond2 from '../MeetImages/Richmond/Richmond2.jpeg'
 import Richmond3 from '../MeetImages/Richmond/Richmond3.jpeg'
 import Richmond4 from '../MeetImages/Richmond/Richmond4.jpeg'
 import Richmond5 from '../MeetImages/Richmond/Richmond5.jpeg'
-import Richmond from './Richmond'
 
 const Sf = (props) => {
     console.log(props.location.pathname.split('/')[1])
