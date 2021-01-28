@@ -12,7 +12,7 @@ class SlideShow extends Component {
     }
 
     zoomOutProperties = {
-        idicators: true,
+        indicators: true,
         scale: 0.4
     }
 

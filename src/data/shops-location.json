@@ -11,7 +11,7 @@
           "PARK_ID": 500,
           "name": "Spark Motorcycles Bay Area",
           "address": "1500 C, Macdonald Ave, Richmond, CA",
-          "phone": "(415)619-0009"
+          "phone": "(415) 619-0009"
         },
         "geometry": {
           "type": "Point",
@@ -24,7 +24,7 @@
           "PARK_ID": 501,
           "name": "Rockridge Two Wheels",
           "address": "6432 Shattuck Ave, Oakland, CA",
-          "phone": "(510)594-0789"
+          "phone": "(510) 594-0789"
         },
         "geometry": {
           "type": "Point",
@@ -37,7 +37,7 @@
           "PARK_ID": 502,
           "name": "O'Hanlon Motorcycles",
           "address": "162 Clara St, San Francisco, CA",
-          "phone": "(415)777-3845"
+          "phone": "(415) 777-3845"
         },
         "geometry": {
           "type": "Point",
@@ -50,7 +50,7 @@
           "PARK_ID": 503,
           "name": "Moto Garage",
           "address": "112 Sagamore St, San Francisco, CA",
-          "phone": "(415)337-1448"
+          "phone": "(415) 337-1448"
         },
         "geometry": {
           "type": "Point",
@@ -63,7 +63,7 @@
           "PARK_ID": 504,
           "name": "Grumpy's Motorcycles",
           "address": "797 San Bruno Ave, San Bruno, CA",
-          "phone": "(650)873-8300"
+          "phone": "(650) 873-8300"
         },
         "geometry": {
           "type": "Point",
@@ -76,7 +76,7 @@
           "PARK_ID": 505,
           "name": "Motorfast Vintage and Sport Motorcycle Repair",
           "address": "11 S Railroad Ave, San Mateo, CA",
-          "phone": "(650)267-1933"
+          "phone": "(650) 267-1933"
         },
         "geometry": {
           "type": "Point",
@@ -86,23 +86,10 @@
       {
         "type": "Feature",
         "properties": {
-          "PARK_ID": 506,
-          "name": "Spark Motorcycles Bay Area",
-          "address": "1500 C, Macdonald Ave, Richmond, CA",
-          "phone": "(415)-619-0009"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [37.93566, -122.35427]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
           "PARK_ID": 507,
           "name": "RC Cycles",
           "address": "30872 Huntwood Ave #1, Hayward, CA",
-          "phone": "(510)471-9755"
+          "phone": "(510) 471-9755"
         },
         "geometry": {
           "type": "Point",
@@ -115,7 +102,7 @@
           "PARK_ID": 508,
           "name": "Meteor Motorbikes",
           "address": "2600 Magnolia St #190, Oakland, CA",
-          "phone": "(510)545-3738"
+          "phone": "(510) 545-3738"
         },
         "geometry": {
           "type": "Point",
@@ -128,7 +115,7 @@
           "PARK_ID": 509,
           "name": "Performance Motorcycle",
           "address": "741 Gilman St, Berkeley, CA",
-          "phone": "(510)525-6797"
+          "phone": "(510) 525-6797"
         },
         "geometry": {
           "type": "Point",
@@ -141,7 +128,7 @@
           "PARK_ID": 510,
           "name": "J & TV-Twin",
           "address": "1026 16th Ave, Redwood City, CA",
-          "phone": "(650)000-0000"
+          "phone": "(650) 000-0000"
         },
         "geometry": {
           "type": "Point",

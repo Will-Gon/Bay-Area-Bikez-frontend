@@ -58,11 +58,12 @@ class Signup extends Component {
                                 <option>Redwood Bikez</option>
                             </select>
                         </div>
+                        <br/>
                         <button className='submit-btn' type='submit'>Sign Up</button>
                     </form>
                     </div>
                 </div>
-                <div>
+                <div className='member'>
                     Already a member, <a className='to-link' href='/login'>Log In</a> here!
                 </div>
             </div>

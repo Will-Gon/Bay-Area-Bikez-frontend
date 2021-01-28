@@ -39,6 +39,8 @@ class Login extends Component {
                 <div className='login-form'>
                     <div className='form-container'>
                         <form onSubmit={this.handleSubmit}>
+                            <br/>
+                            <br/>
                             <input 
                                 name='username' 
                                 value={username}
@@ -54,6 +56,7 @@ class Login extends Component {
                                 placeholder='Password'
                                 onChange={this.handleChange}
                                 />
+                                <br/>
                                 <br/>
                                 <button className='submit-btn' type='submit'>Log in</button>
                                 <div>

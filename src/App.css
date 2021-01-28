@@ -115,7 +115,37 @@
   background-color: lightgray;
 }
 
+.member {
+  border: inset;
+  margin: 25px;
+  width: 30%;
+  height: 25px;
+  display: inline-block;
+}
+
 .login-page {
+  background-color: lightgray;
+}
+
+.update-form-container {
+  border: inset;
+  width: 30%;
+  height: 150px;
+  display: inline-block;
+  padding: 50px;
+  background-color: lightgray;
+  margin-top: 100px;
+}
+
+.update-form {
+  border: inset;
+  margin: 25px;
+  margin-bottom: 25px;
+  background-color: rgb(0, 80, 103);
+  height: 450px;
+}
+
+.update-page {
   background-color: lightgray;
 }
 
@@ -126,6 +156,12 @@
   border: inset;
   padding: 10px;
   background-color: black;
+}
+
+.shops-map {
+  width: 100%;
+  display: inline-block;
+  margin: 30px;
 }
 
 /* Containers*/
@@ -164,6 +200,40 @@
   margin: 25px;
 }
 
+.build-center {
+  border: inset;
+  margin: 25px;
+}
+
+.build-aside {
+  border: inset;
+  margin: 25px;
+  width: 300px;
+  background-color: lightgray;
+}
+
+.build-aside-btn {
+  display: grid;
+  border: inset;
+  margin-top: 40px;
+  width: 300px;
+  background-color: lightgray;
+}
+
+.build-center {
+  background-color: lightgray;
+}
+
+.profile-wrapper {
+  border: inset;
+  margin: 25px;
+  background-color: rgb(0, 80, 103);
+}
+
+.profile-page {
+  background-color: lightgray;
+}
+
 /* Meetup Pics*/
 .slide-wrapper {
   border: inset;
@@ -177,6 +247,11 @@
   padding: 25px;
   border: inset;
   background-color: rgb(0, 80, 103);
+}
+
+.contents-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
 }
 
 .liked-city {

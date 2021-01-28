@@ -7,7 +7,7 @@ const Map = () => {
     return (
         <GoogleMap 
         defaultZoom={10} 
-        defaultCenter={{ lat: 37.570008, lng: -122.391980 }}
+        defaultCenter={{ lat: 37.7258, lng: -122.1569 }}
         //defaultOptions={{styles: mapStyles}}
         >
             {shopsData.features.map((place) => (
@@ -37,7 +37,7 @@ const Map = () => {
            ))} */}
 
             {selectedPlace && (
-                //console.log(selectedPlace.lat)
+                //console.log(selectedPlace)
                 <InfoWindow
                 position={{ 
                     lat: selectedPlace.geometry.coordinates[0], 
@@ -48,8 +48,9 @@ const Map = () => {
                 }}
                 >
                     <div>
-                        <h2>{selectedPlace.features.name}</h2>
-                        <p>{selectedPlace.features.description}</p>
+                        <h2>{selectedPlace.properties.name}</h2>
+                        <p>{selectedPlace.properties.address}</p>
+                        <p>{selectedPlace.properties.phone}</p>
                     </div>
                 </InfoWindow>
             )}
@@ -61,7 +62,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map))
 
 export default function App() {
     return(
-        <div className='map-container' style={{ width: "80vw", height: "60vh" }}>
+        <div className='map-container' style={{ width: "50vw", height: "50vh" }}>
             <WrappedMap 
             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=`}
             loadingElement={<div style={{ height: "100%" }} />}
