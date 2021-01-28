@@ -20,9 +20,10 @@
 }
 
 .navbar .navlink:hover {
-  background: rgb(156, 6, 6);
+  /* background: rgb(156, 6, 6); */
   color: white;
   cursor: pointer;
+  background: rgb(0, 80, 103);
 }
 
 .nav-right {
@@ -73,6 +74,49 @@
 
 .body {
   margin-top: 150px;
+}
+
+/*Error*/
+
+.error {
+  color: red;
+  font-weight: 900;
+}
+
+/*Forms*/
+
+.form-container {
+  border: inset;
+  width: 30%;
+  height: 150px;
+  display: inline-block;
+  padding: 50px;
+  background-color: lightgray;
+  margin-top: 100px;
+}
+
+.login-form {
+  border: inset;
+  margin: 25px;
+  margin-bottom: 25px;
+  background-color: rgb(0, 80, 103);
+  height: 450px;
+}
+
+.signup-form {
+  border: inset;
+  margin: 25px;
+  margin-bottom: 25px;
+  background-color: rgb(0, 80, 103);
+  height: 450px;
+}
+
+.signup-page {
+  background-color: lightgray;
+}
+
+.login-page {
+  background-color: lightgray;
 }
 
 /*Map*/

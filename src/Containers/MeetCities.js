@@ -10,11 +10,14 @@ const MeetCities = ({user, meets, addToFavorites, removeFavorite, favorites}) =>
                 <div className='like-pics'>
                     {/* key={place.id} */}
                     <img src={place.image_url} alt={place.name}/>
+                    <h4>{place.name}</h4>
+                    <div>
                     {favorites.find(favorite => favorite.place.id === place.id) ? 
                     <button onClick={() => removeFavorite(place)}>Unlike</button>
                     :
                     <button onClick={() => addToFavorites(user, place)}>Like</button>
-                }
+                    }
+                    </div>
                 </div>
             ))}
             </div>

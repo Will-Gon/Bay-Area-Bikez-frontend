@@ -42,7 +42,8 @@ class App extends React.Component {
     },
     token: '',
     favorites: [],
-    meets: []
+    meets: [],
+    error: null
   }
 
   componentDidMount() {
@@ -103,12 +104,16 @@ class App extends React.Component {
       if (data.user) {
         localStorage.setItem('token', data.token)
         this.setState({
-          user: data.user //Need to confirm
+          user: data.user,//Need to confirm
+          error: null
         }, () => {
           this.props.history.push('/profile')
         })
       } else {
         //console.log(data)
+        this.setState({
+          error: data.error
+        })
       }
     })
     .catch(errors => console.log(errors))
@@ -225,7 +230,7 @@ class App extends React.Component {
       <div className='App'>
         <Navbar user={user} />
         <div className='body'>
-
+        {this.state.error && <p className='error'>{this.state.error}</p>}
         <Switch>
           <Route exact path='/' render={() => <Home user={user} />} />
           <Route exact path='/about' render={() => <About />} />

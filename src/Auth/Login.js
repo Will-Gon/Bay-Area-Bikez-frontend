@@ -23,7 +23,7 @@ class Login extends Component {
         return (
             <div>
                 <ul>
-                    {this.state.errors.map(error => {
+                    {this.state.error.map(error => {
                         return <li key={error}>{error}</li>
                     })}
                 </ul>
@@ -34,32 +34,36 @@ class Login extends Component {
     render() {
         const { username, password } = this.state
         return (
-            <div className='login-form'>
+            <div className='login-page'>
                 <h1>Log in</h1>
-                <form onSubmit={this.handleSubmit}>
-                     <input 
-                        name='username' 
-                        value={username}
-                        type='text' 
-                        placeholder='Username'
-                        onChange={this.handleChange}
-                        />
-                        <br/>
-                        <input 
-                        name='password'
-                        value={password}
-                        type='password'
-                        placeholder='Password'
-                        onChange={this.handleChange}
-                        />
-                        <br/>
-                        <button className='submit-btn' type='submit'>Log in</button>
-                        <div>
-                            Or <a className='to-link' href='/signup'>Sign Up</a>
-                        </div> 
-                </form>
+                <div className='login-form'>
+                    <div className='form-container'>
+                        <form onSubmit={this.handleSubmit}>
+                            <input 
+                                name='username' 
+                                value={username}
+                                type='text' 
+                                placeholder='Username'
+                                onChange={this.handleChange}
+                                />
+                                <br/>
+                                <input 
+                                name='password'
+                                value={password}
+                                type='password'
+                                placeholder='Password'
+                                onChange={this.handleChange}
+                                />
+                                <br/>
+                                <button className='submit-btn' type='submit'>Log in</button>
+                                <div>
+                                    Or <a className='to-link' href='/signup'>Sign Up</a>
+                                </div> 
+                        </form>
+                    </div>
+                </div>
                 <div>
-                    {this.state.errors ? this.handleErrors() : null}
+                    {this.state.error ? this.handleErrors() : null}
                 </div>
             </div>
         )
