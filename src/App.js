@@ -100,7 +100,6 @@ class App extends React.Component {
     })
     .then(res => res.json())
     .then(data => {
-      //console.log(data)
       if (data.user) {
         localStorage.setItem('token', data.token)
         this.setState({
@@ -110,7 +109,6 @@ class App extends React.Component {
           this.props.history.push('/profile')
         })
       } else {
-        //console.log(data)
         this.setState({
           error: data.error
         })
@@ -120,7 +118,6 @@ class App extends React.Component {
   }
 
   handleSignupFetch = (info, request) => {
-    // console.log(info)
     fetch(request, {
       method: 'POST',
       headers: {
@@ -171,7 +168,6 @@ class App extends React.Component {
     })
     .then(res => res.json())
     .then(data => {
-      //console.log(data)
       this.setState(prevState => {
         return {
           favorites: [...prevState.favorites, data] //Need to double check attributes
@@ -215,7 +211,6 @@ class App extends React.Component {
     })
     .then(res => res.json())
     .then(profile => {
-      // console.log(profile.user)
       this.setState({
         user: profile.user //NEED TO DOUBLE CHECK ATTRIBUTES
       }, () => {

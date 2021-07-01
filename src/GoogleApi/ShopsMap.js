@@ -37,7 +37,6 @@ const Map = () => {
            ))} */}
 
             {selectedPlace && (
-                //console.log(selectedPlace)
                 <InfoWindow
                 position={{ 
                     lat: selectedPlace.geometry.coordinates[0], 
@@ -64,7 +63,7 @@ export default function App() {
     return(
         <div className='map-container' style={{ width: "50vw", height: "50vh" }}>
             <WrappedMap 
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=`}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCljdIRukrw4wxB0NV2PJBAr8Xs788hcI8`}
             loadingElement={<div style={{ height: "100%" }} />}
             containerElement={<div style={{ height: "100%" }} />}
             mapElement={<div style={{ height: "100%" }} />}

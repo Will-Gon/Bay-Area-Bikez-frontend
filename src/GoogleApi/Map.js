@@ -4,12 +4,11 @@ import mapStyles from '../GoogleApi/mapStyles'
 
 
 const Map = ({meets}) => {
-    //console.log(meets)
     const [selectedPlace, setSelectedPlace] = useState(null)
     return (
         <GoogleMap 
         defaultZoom={10} 
-        defaultCenter={{ lat: 37.570008, lng: -122.391980 }}
+        defaultCenter={{ lat: 37.7258, lng: -122.1569 }}
         defaultOptions={{styles: mapStyles}}
         >
             {/* {meetsData.features.map((place) => (
@@ -26,7 +25,6 @@ const Map = ({meets}) => {
             ))} */}
            
            {meets.map((p) => (
-               //console.log(p.lat)
                <Marker 
                key={p.id}
                position={{
@@ -39,7 +37,6 @@ const Map = ({meets}) => {
            ))}
 
             {selectedPlace && (
-                //console.log(selectedPlace.lat)
                 <InfoWindow
                 position={{ 
                     lat: selectedPlace.lat, 
@@ -66,7 +63,7 @@ export default function App({meets}) {
         <div className='map-container' style={{ width: "80vw", height: "60vh" }}>
             <WrappedMap 
             meets={meets}
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=`}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCljdIRukrw4wxB0NV2PJBAr8Xs788hcI8`}
             loadingElement={<div style={{ height: "100%" }} />}
             containerElement={<div style={{ height: "100%" }} />}
             mapElement={<div style={{ height: "100%" }} />}

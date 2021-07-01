@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class FavoritesContainer extends Component {
     addFaves = () => {
         return this.props.favorites.map((fav) => (
-            //console.log(fav.place.name)
             <div className='liked-city'>
                 <img src={fav.place.image_url} alt='Place'/>
                 <h2>{fav.place.name}</h2>

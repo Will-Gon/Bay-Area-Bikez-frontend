@@ -4,7 +4,6 @@ import Map from '../GoogleApi/Map'
 import MeetPlaces from './MeetPlaces'
 
 const Meets = ({user, meets}) => {
-    //console.log(meets)
     return (
         <div className='meets-page'>
             <h1>Meets Page</h1>

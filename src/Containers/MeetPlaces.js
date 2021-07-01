@@ -13,7 +13,6 @@ import WalnutCreek from '../PlaceImages/WalnutCreek.jpeg'
 import Richmond from '../PlaceImages/Richmond.jpeg'
 
 const MeetPlaces = ({user}) => {
-    //console.log(user)
     return (
         <div className='place-container'>
             <h1> 🏍 Meets 🏍 </h1> 
